@@ -1,0 +1,2364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Humanora helps you rewrite, improve, simplify, shorten, expand and polish text while preserving its meaning."
+    >
+
+    <title>Humanora — Make AI Text Feel Human</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a href="#home" class="brand" aria-label="Humanora Home">
+
+                <img
+                    src="../assets/logo.svg"
+                    alt="Humanora"
+                    class="brand-logo"
+                >
+
+                <div class="brand-text">
+                    <span class="brand-name">Humanora</span>
+                    <span class="brand-tagline">
+                        Make AI Text Feel Human.
+                    </span>
+                </div>
+
+            </a>
+
+
+            <nav class="main-nav" id="mainNav">
+
+                <a href="#workspace">Rewrite</a>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#history">History</a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <!-- Logged out -->
+
+                <div
+                    class="guest-actions"
+                    id="guestActions"
+                >
+
+                    <button
+                        class="header-login-btn"
+                        id="headerLoginBtn"
+                        type="button"
+                    >
+                        Sign In
+                    </button>
+
+                    <button
+                        class="header-register-btn"
+                        id="headerRegisterBtn"
+                        type="button"
+                    >
+                        Create Account
+                    </button>
+
+                </div>
+
+
+                <!-- Logged in -->
+
+                <div
+                    class="account-menu-wrapper hidden"
+                    id="accountMenuWrapper"
+                >
+
+                    <button
+                        class="account-trigger"
+                        id="accountTrigger"
+                        type="button"
+                        aria-expanded="false"
+                    >
+
+                        <span
+                            class="account-avatar"
+                            id="accountAvatar"
+                        >
+                            H
+                        </span>
+
+                        <span class="account-trigger-info">
+
+                            <span
+                                class="account-trigger-name"
+                                id="accountTriggerName"
+                            >
+                                Humanora User
+                            </span>
+
+                            <span
+                                class="account-trigger-plan"
+                                id="accountTriggerPlan"
+                            >
+                                Free
+                            </span>
+
+                        </span>
+
+                        <span class="account-chevron">
+                            ⌄
+                        </span>
+
+                    </button>
+
+
+                    <div
+                        class="account-dropdown hidden"
+                        id="accountDropdown"
+                    >
+
+                        <div class="account-dropdown-header">
+
+                            <span
+                                class="account-dropdown-avatar"
+                                id="accountDropdownAvatar"
+                            >
+                                H
+                            </span>
+
+                            <div>
+
+                                <strong id="accountDropdownName">
+                                    Humanora User
+                                </strong>
+
+                                <span id="accountDropdownEmail">
+                                    user@example.com
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="account-dropdown-stats">
+
+                            <div>
+
+                                <strong id="accountTransformations">
+                                    0
+                                </strong>
+
+                                <span>
+                                    Transformations
+                                </span>
+
+                            </div>
+
+                            <div>
+
+                                <strong id="accountPlan">
+                                    Free
+                                </strong>
+
+                                <span>
+                                    Plan
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- DAILY USAGE -->
+
+                        <div
+                            class="account-usage"
+                            id="accountUsage"
+                        >
+
+                            <div class="account-usage-heading">
+
+                                <div>
+
+                                    <span class="account-usage-eyebrow">
+                                        DAILY USAGE
+                                    </span>
+
+                                    <strong id="accountUsageLabel">
+                                        Free Plan
+                                    </strong>
+
+                                </div>
+
+                                <strong
+                                    class="account-usage-count"
+                                    id="accountUsageCount"
+                                >
+                                    0 / 20
+                                </strong>
+
+                            </div>
+
+
+                            <div
+                                class="usage-track"
+                                id="accountUsageTrack"
+                                role="progressbar"
+                                aria-label="Daily Humanora usage"
+                                aria-valuemin="0"
+                                aria-valuemax="20"
+                                aria-valuenow="0"
+                            >
+
+                                <div
+                                    class="usage-bar"
+                                    id="accountUsageBar"
+                                    style="width: 0%;"
+                                ></div>
+
+                            </div>
+
+
+                            <div class="account-usage-footer">
+
+                                <span id="accountUsageRemaining">
+                                    20 transformations remaining today
+                                </span>
+
+                                <small id="accountUsageReset">
+                                    Resets daily at 00:00 UTC
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="account-dropdown-item"
+                            id="accountHistoryBtn"
+                            type="button"
+                        >
+
+                            <span>↻</span>
+
+                            My History
+
+                        </button>
+
+
+                        <button
+                            class="account-dropdown-item logout-item"
+                            id="logoutBtn"
+                            type="button"
+                        >
+
+                            <span>↗</span>
+
+                            Sign Out
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    type="button"
+                    aria-label="Open navigation"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="hero" id="home">
+
+            <div class="container hero-grid">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        ✦ AI-powered writing workspace
+                    </div>
+
+                    <h1>
+                        Make your writing
+                        <span>clearer, smoother</span>
+                        and more natural.
+                    </h1>
+
+                    <p class="hero-description">
+                        Humanora helps you rewrite, improve, simplify,
+                        shorten, expand and polish your text while keeping
+                        the original meaning intact.
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="#workspace"
+                            class="primary-cta"
+                        >
+                            Start Writing
+                            <span>→</span>
+                        </a>
+
+                        <button
+                            class="secondary-cta"
+                            id="heroAccountBtn"
+                            type="button"
+                        >
+                            Create Free Account
+                        </button>
+
+                    </div>
+
+
+                    <div class="hero-points">
+
+                        <span>
+                            ✓ No complicated setup
+                        </span>
+
+                        <span>
+                            ✓ Multiple writing modes
+                        </span>
+
+                        <span>
+                            ✓ Free account history
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="hero-glow"></div>
+
+                    <div class="hero-demo-card">
+
+                        <div class="hero-demo-top">
+
+                            <div>
+
+                                <span class="demo-label">
+                                    Humanora Rewrite
+                                </span>
+
+                                <strong>
+                                    Natural Mode
+                                </strong>
+
+                            </div>
+
+                            <span class="demo-status">
+                                Ready
+                            </span>
+
+                        </div>
+
+
+                        <div class="demo-text demo-original">
+                            The implementation of artificial intelligence
+                            technology has resulted in significant changes
+                            within modern working environments.
+                        </div>
+
+
+                        <div class="demo-arrow">
+                            ↓
+                        </div>
+
+
+                        <div class="demo-text demo-result">
+                            AI has changed the way many modern workplaces
+                            operate, helping teams work differently and
+                            handle everyday tasks more efficiently.
+                        </div>
+
+
+                        <div class="demo-footer">
+
+                            <span>
+                                Meaning preserved
+                            </span>
+
+                            <span>
+                                Natural flow
+                            </span>
+
+                            <span>
+                                Clearer wording
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             MODE SELECTOR
+        ====================================================== -->
+
+        <section class="mode-section">
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-kicker">
+                        Choose your goal
+                    </span>
+
+                    <h2>
+                        One workspace. Multiple ways to improve your text.
+                    </h2>
+
+                    <p>
+                        Select what you want Humanora to do before
+                        transforming your writing.
+                    </p>
+
+                </div>
+
+
+                <div class="mode-grid">
+
+                    <button
+                        class="rewrite-mode active"
+                        data-mode="humanize"
+                        type="button"
+                    >
+
+                        <span class="mode-icon">
+                            ✦
+                        </span>
+
+                        <span class="mode-copy">
+
+                            <strong>
+                                Humanize
+                            </strong>
+
+                            <small>
+                                Make text sound more natural.
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="rewrite-mode"
+                        data-mode="improve"
+                        type="button"
+                    >
+
+                        <span class="mode-icon">
+                            ↗
+                        </span>
+
+                        <span class="mode-copy">
+
+                            <strong>
+                                Improve
+                            </strong>
+
+                            <small>
+                                Improve clarity and overall flow.
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="rewrite-mode"
+                        data-mode="simplify"
+                        type="button"
+                    >
+
+                        <span class="mode-icon">
+                            ◎
+                        </span>
+
+                        <span class="mode-copy">
+
+                            <strong>
+                                Simplify
+                            </strong>
+
+                            <small>
+                                Make complicated text easier.
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="rewrite-mode"
+                        data-mode="shorten"
+                        type="button"
+                    >
+
+                        <span class="mode-icon">
+                            −
+                        </span>
+
+                        <span class="mode-copy">
+
+                            <strong>
+                                Shorten
+                            </strong>
+
+                            <small>
+                                Say the same thing with fewer words.
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="rewrite-mode"
+                        data-mode="expand"
+                        type="button"
+                    >
+
+                        <span class="mode-icon">
+                            ＋
+                        </span>
+
+                        <span class="mode-copy">
+
+                            <strong>
+                                Expand
+                            </strong>
+
+                            <small>
+                                Add useful detail and explanation.
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="rewrite-mode"
+                        data-mode="grammar"
+                        type="button"
+                    >
+
+                        <span class="mode-icon">
+                            ✓
+                        </span>
+
+                        <span class="mode-copy">
+
+                            <strong>
+                                Grammar
+                            </strong>
+
+                            <small>
+                                Fix grammar, spelling and punctuation.
+                            </small>
+
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             WORKSPACE
+        ====================================================== -->
+
+        <section
+            class="workspace-section"
+            id="workspace"
+        >
+
+            <div class="container">
+
+                <div class="workspace-heading">
+
+                    <div>
+
+                        <span class="section-kicker">
+                            Writing workspace
+                        </span>
+
+                        <h2>
+                            Transform your text
+                        </h2>
+
+                    </div>
+
+
+                    <div class="current-mode">
+
+                        <span>
+                            Current mode
+                        </span>
+
+                        <strong id="selectedModeLabel">
+                            Humanize
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DAILY USAGE WORKSPACE CARD -->
+
+                <div
+                    class="workspace-usage-card hidden"
+                    id="workspaceUsage"
+                >
+
+                    <div class="workspace-usage-main">
+
+                        <div class="workspace-usage-icon">
+                            ✦
+                        </div>
+
+                        <div class="workspace-usage-copy">
+
+                            <div class="workspace-usage-title-row">
+
+                                <strong id="workspaceUsagePlan">
+                                    Free Plan
+                                </strong>
+
+                                <span id="workspaceUsageCount">
+                                    0 / 20 used today
+                                </span>
+
+                            </div>
+
+
+                            <div
+                                class="workspace-usage-track"
+                                id="workspaceUsageTrack"
+                                role="progressbar"
+                                aria-label="Daily transformation usage"
+                                aria-valuemin="0"
+                                aria-valuemax="20"
+                                aria-valuenow="0"
+                            >
+
+                                <div
+                                    class="workspace-usage-bar"
+                                    id="workspaceUsageBar"
+                                    style="width: 0%;"
+                                ></div>
+
+                            </div>
+
+
+                            <div class="workspace-usage-meta">
+
+                                <span id="workspaceUsageRemaining">
+                                    20 transformations remaining today
+                                </span>
+
+                                <span id="workspaceUsageReset">
+                                    Resets at 00:00 UTC
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="workspace-grid">
+
+                    <!-- INPUT -->
+
+                    <article class="editor-panel input-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-label">
+                                    ORIGINAL
+                                </span>
+
+                                <h3>
+                                    Your text
+                                </h3>
+
+                                <p>
+                                    Paste or type the text you want to transform.
+                                </p>
+
+                            </div>
+
+
+                            <div class="panel-actions">
+
+                                <button
+                                    class="text-action-btn"
+                                    id="pasteBtn"
+                                    type="button"
+                                >
+                                    Paste
+                                </button>
+
+                                <button
+                                    class="text-action-btn"
+                                    id="clearBtn"
+                                    type="button"
+                                >
+                                    Clear
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <textarea
+                            id="inputText"
+                            maxlength="10000"
+                            placeholder="Paste or type your text here..."
+                        ></textarea>
+
+
+                        <div class="text-stats">
+
+                            <span>
+                                <strong id="inputWordCount">0</strong>
+                                words
+                            </span>
+
+                            <span>
+                                <strong id="inputCharCount">0</strong>
+                                characters
+                            </span>
+
+                            <span>
+                                <strong id="inputReadingTime">0 min</strong>
+                                read
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="sample-btn"
+                            id="sampleBtn"
+                            type="button"
+                        >
+                            Try sample text
+                        </button>
+
+                    </article>
+
+
+                    <!-- CONTROL PANEL -->
+
+                    <aside class="control-panel">
+
+                        <div class="control-panel-top">
+
+                            <span class="panel-label">
+                                SETTINGS
+                            </span>
+
+                            <h3>
+                                Fine-tune your result
+                            </h3>
+
+                        </div>
+
+
+                        <div class="control-group">
+
+                            <label for="tone">
+                                Tone
+                            </label>
+
+                            <select id="tone">
+
+                                <option value="natural" selected>
+                                    Natural
+                                </option>
+
+                                <option value="professional">
+                                    Professional
+                                </option>
+
+                                <option value="casual">
+                                    Casual
+                                </option>
+
+                                <option value="academic">
+                                    Academic
+                                </option>
+
+                                <option value="friendly">
+                                    Friendly
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="control-group">
+
+                            <label>
+                                Rewrite strength
+                            </label>
+
+                            <div class="strength-selector">
+
+                                <button
+                                    class="strength-btn"
+                                    data-strength="light"
+                                    type="button"
+                                >
+                                    Light
+                                </button>
+
+                                <button
+                                    class="strength-btn active"
+                                    data-strength="medium"
+                                    type="button"
+                                >
+                                    Medium
+                                </button>
+
+                                <button
+                                    class="strength-btn"
+                                    data-strength="strong"
+                                    type="button"
+                                >
+                                    Strong
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="mode-description"
+                            id="modeDescription"
+                        >
+                            Make your writing sound smoother and more natural
+                            while preserving the original meaning.
+                        </div>
+
+
+                        <button
+                            class="humanize-btn"
+                            id="humanizeBtn"
+                            type="button"
+                        >
+
+                            <span class="btn-text">
+                                Humanize Text
+                            </span>
+
+                            <span class="btn-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+                        <div
+                            class="action-message"
+                            id="actionMessage"
+                            aria-live="polite"
+                        ></div>
+
+
+                        <div class="account-save-note">
+
+                            <span>
+                                ✦
+                            </span>
+
+                            <p id="accountSaveNote">
+                                Sign in to save transformations to your account history.
+                            </p>
+
+                        </div>
+
+                    </aside>
+
+
+                    <!-- OUTPUT -->
+
+                    <article class="editor-panel output-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-label">
+                                    RESULT
+                                </span>
+
+                                <h3>
+                                    Humanora result
+                                </h3>
+
+                                <p>
+                                    Your transformed text will appear here.
+                                </p>
+
+                            </div>
+
+
+                            <div class="panel-actions">
+
+                                <button
+                                    class="icon-action-btn"
+                                    id="copyBtn"
+                                    type="button"
+                                    title="Copy result"
+                                >
+                                    Copy
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="output-text empty-output"
+                            id="outputText"
+                        >
+
+                            <div class="empty-result-state">
+
+                                <span>
+                                    ✦
+                                </span>
+
+                                <strong>
+                                    Your result will appear here
+                                </strong>
+
+                                <p>
+                                    Add your text, choose your settings and
+                                    let Humanora transform it.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="text-stats">
+
+                            <span>
+                                <strong id="outputWordCount">0</strong>
+                                words
+                            </span>
+
+                            <span>
+                                <strong id="outputCharCount">0</strong>
+                                characters
+                            </span>
+
+                            <span>
+                                <strong id="outputReadingTime">0 min</strong>
+                                read
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="output-badge"
+                            id="outputBadge"
+                        >
+                            Waiting for text
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- LOADING -->
+
+                <div
+                    class="loading-card hidden"
+                    id="loadingCard"
+                >
+
+                    <div class="loading-orb"></div>
+
+                    <div>
+
+                        <strong>
+                            Humanora is working on your text
+                        </strong>
+
+                        <span>
+                            Rewriting while preserving your original meaning.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESULT TOOLS -->
+
+                <div class="result-tools">
+
+                    <span class="result-tools-label">
+                        Result tools
+                    </span>
+
+                    <div class="result-tool-buttons">
+
+                        <button
+                            id="regenerateBtn"
+                            type="button"
+                            disabled
+                        >
+                            Regenerate
+                        </button>
+
+                        <button
+                            id="compareBtn"
+                            type="button"
+                            disabled
+                        >
+                            Compare
+                        </button>
+
+                        <button
+                            id="downloadBtn"
+                            type="button"
+                            disabled
+                        >
+                            Download
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ANALYSIS -->
+
+                <div
+                    class="analysis-card hidden"
+                    id="analysisCard"
+                >
+
+                    <div class="analysis-heading">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                Writing analysis
+                            </span>
+
+                            <h3>
+                                Before &amp; after
+                            </h3>
+
+                        </div>
+
+
+                        <div class="score-change">
+
+                            <strong id="humanScoreChange">
+                                —
+                            </strong>
+
+                            <span>
+                                style shift
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="analysis-grid">
+
+                        <div class="analysis-column">
+
+                            <div class="analysis-column-title">
+
+                                <span>
+                                    Original
+                                </span>
+
+                                <strong id="originalHumanScore">
+                                    0%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="score-row">
+
+                                <div class="score-row-top">
+
+                                    <span>
+                                        Natural style
+                                    </span>
+
+                                    <span id="originalHumanScoreLabel">
+                                        0%
+                                    </span>
+
+                                </div>
+
+                                <div class="score-track">
+
+                                    <div
+                                        class="score-fill human-score"
+                                        id="originalHumanBar"
+                                    ></div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="score-row">
+
+                                <div class="score-row-top">
+
+                                    <span>
+                                        Formulaic style
+                                    </span>
+
+                                    <span id="originalAiScoreLabel">
+                                        0%
+                                    </span>
+
+                                </div>
+
+                                <div class="score-track">
+
+                                    <div
+                                        class="score-fill ai-score"
+                                        id="originalAiBar"
+                                    ></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="analysis-column">
+
+                            <div class="analysis-column-title">
+
+                                <span>
+                                    Humanora result
+                                </span>
+
+                                <strong id="resultHumanScore">
+                                    0%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="score-row">
+
+                                <div class="score-row-top">
+
+                                    <span>
+                                        Natural style
+                                    </span>
+
+                                    <span id="resultHumanScoreLabel">
+                                        0%
+                                    </span>
+
+                                </div>
+
+                                <div class="score-track">
+
+                                    <div
+                                        class="score-fill human-score"
+                                        id="resultHumanBar"
+                                    ></div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="score-row">
+
+                                <div class="score-row-top">
+
+                                    <span>
+                                        Formulaic style
+                                    </span>
+
+                                    <span id="resultAiScoreLabel">
+                                        0%
+                                    </span>
+
+                                </div>
+
+                                <div class="score-track">
+
+                                    <div
+                                        class="score-fill ai-score"
+                                        id="resultAiBar"
+                                    ></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <p
+                        class="analysis-explanation"
+                        id="analysisExplanation"
+                    ></p>
+
+
+                    <div class="analysis-disclaimer">
+
+                        <strong>
+                            About this analysis
+                        </strong>
+
+                        <p>
+                            These scores are style-based estimates intended to
+                            describe writing characteristics. They cannot prove
+                            whether text was written by a person or generated
+                            by AI.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+                <!-- =====================================================
+             HISTORY
+        ====================================================== -->
+
+        <section
+            class="history-section"
+            id="history"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-kicker">
+                        Your writing history
+                    </span>
+
+                    <h2>
+                        Recent transformations
+                    </h2>
+
+                    <p>
+                        Keep track of your latest Humanora results.
+                        Sign in to sync your transformation history
+                        with your account.
+                    </p>
+
+                </div>
+
+
+                <div class="history-toolbar">
+
+                    <div class="history-status">
+
+                        <span
+                            class="history-status-dot"
+                            id="historyStatusDot"
+                        ></span>
+
+                        <span id="historyStatusText">
+                            Local history
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="clear-history-btn"
+                        id="clearHistoryBtn"
+                        type="button"
+                    >
+                        Clear History
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="history-list"
+                    id="historyList"
+                >
+
+                    <div
+                        class="history-empty"
+                        id="historyEmpty"
+                    >
+
+                        <div class="history-empty-icon">
+                            ↻
+                        </div>
+
+                        <strong>
+                            No transformations yet
+                        </strong>
+
+                        <p>
+                            Your recent Humanora results will appear here.
+                        </p>
+
+                        <a href="#workspace">
+                            Start writing
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             HOW IT WORKS
+        ====================================================== -->
+
+        <section
+            class="how-section"
+            id="how-it-works"
+        >
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-kicker">
+                        Simple workflow
+                    </span>
+
+                    <h2>
+                        From rough text to polished writing
+                    </h2>
+
+                    <p>
+                        Humanora keeps the process simple so you can
+                        focus on what you want to say.
+                    </p>
+
+                </div>
+
+
+                <div class="steps-grid">
+
+                    <article class="step-card">
+
+                        <span class="step-number">
+                            01
+                        </span>
+
+                        <div class="step-icon">
+                            ✎
+                        </div>
+
+                        <h3>
+                            Add your text
+                        </h3>
+
+                        <p>
+                            Paste or type the content you want to rewrite,
+                            improve or polish.
+                        </p>
+
+                    </article>
+
+
+                    <article class="step-card">
+
+                        <span class="step-number">
+                            02
+                        </span>
+
+                        <div class="step-icon">
+                            ◎
+                        </div>
+
+                        <h3>
+                            Choose your settings
+                        </h3>
+
+                        <p>
+                            Select a writing mode, tone and rewrite strength
+                            based on the result you want.
+                        </p>
+
+                    </article>
+
+
+                    <article class="step-card">
+
+                        <span class="step-number">
+                            03
+                        </span>
+
+                        <div class="step-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Transform your writing
+                        </h3>
+
+                        <p>
+                            Humanora processes your text and returns a clearer,
+                            smoother version while preserving the meaning.
+                        </p>
+
+                    </article>
+
+
+                    <article class="step-card">
+
+                        <span class="step-number">
+                            04
+                        </span>
+
+                        <div class="step-icon">
+                            ✓
+                        </div>
+
+                        <h3>
+                            Review and use
+                        </h3>
+
+                        <p>
+                            Compare the result, copy it, download it or
+                            regenerate another version.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FEATURES
+        ====================================================== -->
+
+        <section
+            class="features-section"
+            id="features"
+        >
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-kicker">
+                        Built for better writing
+                    </span>
+
+                    <h2>
+                        Useful tools without unnecessary complexity
+                    </h2>
+
+                    <p>
+                        Humanora gives you practical writing controls
+                        in one focused workspace.
+                    </p>
+
+                </div>
+
+
+                <div class="features-grid">
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Natural rewriting
+                        </h3>
+
+                        <p>
+                            Smooth awkward wording and improve flow while
+                            keeping your original message intact.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            ↗
+                        </div>
+
+                        <h3>
+                            Multiple writing modes
+                        </h3>
+
+                        <p>
+                            Humanize, improve, simplify, shorten, expand
+                            or correct grammar from the same workspace.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            ◎
+                        </div>
+
+                        <h3>
+                            Tone control
+                        </h3>
+
+                        <p>
+                            Adjust your result for natural, professional,
+                            casual, academic or friendly communication.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            ◈
+                        </div>
+
+                        <h3>
+                            Rewrite strength
+                        </h3>
+
+                        <p>
+                            Choose how lightly or strongly Humanora should
+                            transform the original wording.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            ↻
+                        </div>
+
+                        <h3>
+                            Transformation history
+                        </h3>
+
+                        <p>
+                            Keep your recent results available and access
+                            account history when signed in.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            ⇄
+                        </div>
+
+                        <h3>
+                            Before &amp; after comparison
+                        </h3>
+
+                        <p>
+                            Compare your original text and Humanora result
+                            side by side before using the final version.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FINAL CTA
+        ====================================================== -->
+
+        <section class="final-cta-section">
+
+            <div class="container">
+
+                <div class="final-cta-card">
+
+                    <div class="final-cta-glow"></div>
+
+                    <div class="final-cta-content">
+
+                        <span class="section-kicker">
+                            Ready to write better?
+                        </span>
+
+                        <h2>
+                            Make your next piece of writing
+                            clearer and more natural.
+                        </h2>
+
+                        <p>
+                            Start with your own text, choose how you want
+                            it improved and let Humanora help you polish it.
+                        </p>
+
+
+                        <div class="final-cta-actions">
+
+                            <a
+                                href="#workspace"
+                                class="primary-cta"
+                            >
+                                Start Writing
+                                <span>→</span>
+                            </a>
+
+                            <button
+                                class="secondary-cta"
+                                id="footerAccountBtn"
+                                type="button"
+                            >
+                                Create Free Account
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-main">
+
+            <div class="footer-brand">
+
+                <a
+                    href="#home"
+                    class="brand"
+                    aria-label="Humanora Home"
+                >
+
+                    <img
+                        src="../assets/logo.svg"
+                        alt="Humanora"
+                        class="brand-logo"
+                    >
+
+                    <div class="brand-text">
+
+                        <span class="brand-name">
+                            Humanora
+                        </span>
+
+                        <span class="brand-tagline">
+                            Make AI Text Feel Human.
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <p>
+                    A focused AI writing workspace for clearer,
+                    smoother and more natural communication.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#workspace">
+                    Rewrite
+                </a>
+
+                <a href="#features">
+                    Features
+                </a>
+
+                <a href="#how-it-works">
+                    How It Works
+                </a>
+
+                <a href="#history">
+                    History
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <span>
+                © 2026 Humanora. All rights reserved.
+            </span>
+
+            <span>
+                AI-assisted writing tool.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         AUTH MODAL
+    ====================================================== -->
+
+    <div
+        class="auth-modal hidden"
+        id="authModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="auth-backdrop"
+            id="authBackdrop"
+        ></div>
+
+
+        <div
+            class="auth-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="authTitle"
+        >
+
+            <button
+                class="auth-close-btn"
+                id="closeAuthBtn"
+                type="button"
+                aria-label="Close account window"
+            >
+                ×
+            </button>
+
+
+            <div class="auth-brand">
+
+                <img
+                    src="../assets/logo.svg"
+                    alt="Humanora"
+                >
+
+                <span>
+                    Humanora
+                </span>
+
+            </div>
+
+
+            <!-- AUTH TABS -->
+
+            <div class="auth-tabs">
+
+                <button
+                    class="auth-tab active"
+                    id="loginTab"
+                    data-auth-view="login"
+                    type="button"
+                >
+                    Sign In
+                </button>
+
+                <button
+                    class="auth-tab"
+                    id="registerTab"
+                    data-auth-view="register"
+                    type="button"
+                >
+                    Create Account
+                </button>
+
+            </div>
+
+
+            <!-- LOGIN -->
+
+            <div
+                class="auth-view"
+                id="loginView"
+            >
+
+                <div class="auth-heading">
+
+                    <span class="auth-eyebrow">
+                        Welcome back
+                    </span>
+
+                    <h2 id="authTitle">
+                        Sign in to Humanora
+                    </h2>
+
+                    <p>
+                        Access your account and saved
+                        transformation history.
+                    </p>
+
+                </div>
+
+
+                <form id="loginForm">
+
+                    <div class="auth-field">
+
+                        <label for="loginEmail">
+                            Email address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            autocomplete="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="auth-field">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+                        <div class="password-field">
+
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                autocomplete="current-password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                            <button
+                                class="password-toggle"
+                                data-password-target="loginPassword"
+                                type="button"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="auth-message"
+                        id="loginMessage"
+                        aria-live="polite"
+                    ></div>
+
+
+                    <button
+                        class="auth-submit-btn"
+                        id="loginSubmitBtn"
+                        type="submit"
+                    >
+
+                        <span>
+                            Sign In
+                        </span>
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+                <p class="auth-switch-text">
+
+                    New to Humanora?
+
+                    <button
+                        id="switchToRegister"
+                        type="button"
+                    >
+                        Create an account
+                    </button>
+
+                </p>
+
+            </div>
+
+
+            <!-- REGISTER -->
+
+            <div
+                class="auth-view hidden"
+                id="registerView"
+            >
+
+                <div class="auth-heading">
+
+                    <span class="auth-eyebrow">
+                        Free account
+                    </span>
+
+                    <h2>
+                        Create your Humanora account
+                    </h2>
+
+                    <p>
+                        Save transformations and access your
+                        writing history when signed in.
+                    </p>
+
+                </div>
+
+
+                <form id="registerForm">
+
+                    <div class="auth-field">
+
+                        <label for="registerName">
+                            Your name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="registerName"
+                            autocomplete="name"
+                            minlength="2"
+                            maxlength="80"
+                            placeholder="Your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="auth-field">
+
+                        <label for="registerEmail">
+                            Email address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            autocomplete="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="auth-field">
+
+                        <label for="registerPassword">
+                            Password
+                        </label>
+
+                        <div class="password-field">
+
+                            <input
+                                type="password"
+                                id="registerPassword"
+                                autocomplete="new-password"
+                                minlength="8"
+                                maxlength="128"
+                                placeholder="At least 8 characters"
+                                required
+                            >
+
+                            <button
+                                class="password-toggle"
+                                data-password-target="registerPassword"
+                                type="button"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                        <small class="auth-field-hint">
+                            Use at least 8 characters.
+                        </small>
+
+                    </div>
+
+
+                    <div
+                        class="auth-message"
+                        id="registerMessage"
+                        aria-live="polite"
+                    ></div>
+
+
+                    <button
+                        class="auth-submit-btn"
+                        id="registerSubmitBtn"
+                        type="submit"
+                    >
+
+                        <span>
+                            Create Account
+                        </span>
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+                <p class="auth-terms">
+                    By creating an account, you agree to use
+                    Humanora responsibly.
+                </p>
+
+
+                <p class="auth-switch-text">
+
+                    Already have an account?
+
+                    <button
+                        id="switchToLogin"
+                        type="button"
+                    >
+                        Sign in
+                    </button>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         COMPARE MODAL
+    ====================================================== -->
+
+    <div
+        class="compare-modal hidden"
+        id="compareModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="compare-backdrop"
+            id="compareModalBackdrop"
+        ></div>
+
+
+        <div
+            class="compare-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="compareDialogTitle"
+        >
+
+            <div class="compare-header">
+
+                <div>
+
+                    <span class="section-kicker">
+                        Side-by-side comparison
+                    </span>
+
+                    <h2 id="compareDialogTitle">
+                        Compare your writing
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="compare-close"
+                    id="closeCompareBtn"
+                    type="button"
+                    aria-label="Close comparison"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="compare-meta">
+
+                <span>
+                    Mode:
+                    <strong id="compareMode">
+                        —
+                    </strong>
+                </span>
+
+                <span>
+                    Tone:
+                    <strong id="compareTone">
+                        —
+                    </strong>
+                </span>
+
+                <span>
+                    Strength:
+                    <strong id="compareStrength">
+                        —
+                    </strong>
+                </span>
+
+            </div>
+
+
+            <div class="compare-grid">
+
+                <article class="compare-column">
+
+                    <div class="compare-column-header">
+
+                        <strong>
+                            Original
+                        </strong>
+
+                        <span id="compareOriginalStats">
+                            0 words
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="compare-text"
+                        id="compareOriginalText"
+                    ></div>
+
+                </article>
+
+
+                <article class="compare-column">
+
+                    <div class="compare-column-header">
+
+                        <strong>
+                            Humanora Result
+                        </strong>
+
+                        <span id="compareResultStats">
+                            0 words
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="compare-text"
+                        id="compareResultText"
+                    ></div>
+
+                </article>
+
+            </div>
+
+
+            <div class="compare-footer">
+
+                <button
+                    class="compare-copy-btn"
+                    id="compareCopyBtn"
+                    type="button"
+                >
+                    Copy Result
+                </button>
+
+                <button
+                    class="compare-done-btn"
+                    id="compareDoneBtn"
+                    type="button"
+                >
+                    Done
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        class="site-toast hidden"
+        id="siteToast"
+        aria-live="polite"
+    >
+
+        <span id="siteToastIcon">
+            ✓
+        </span>
+
+        <div>
+
+            <strong id="siteToastTitle">
+                Done
+            </strong>
+
+            <p id="siteToastMessage">
+                Action completed.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

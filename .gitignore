@@ -1,0 +1,32 @@
+
+# Humanora - Git Ignore
+
+# API keys and environment secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+
+# Node.js dependencies
+node_modules/
+**/node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local development files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+
+# Local database and temporary SQLite files
+backend/data/
+*.db
+*.db-shm
+*.db-wal

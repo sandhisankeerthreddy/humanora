@@ -1,0 +1,28 @@
+{
+  "name": "humanora-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Humanora AI text humanizer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "humanora",
+    "ai",
+    "text-humanizer",
+    "llm"
+  ],
+  "author": "Humanora",
+  "license": "MIT",
+  "dependencies": {
+    "@huggingface/inference": "^4.13.30",
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^13.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "nodemailer": "^10.0.10"
+  }
+}
